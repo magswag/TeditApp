@@ -1,0 +1,182 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.micropop.tedit.EditorActivity"
+    android:id="@+id/backgroundre">
+
+    <HorizontalScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:id="@+id/horizontalScrollView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorAccentA200">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/TextToolz"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="@color/colorAccentA100"
+                android:checked="false"
+                android:textOff="T"
+                android:textOn="T"
+                android:textColor="@color/colorAccentA400"
+                android:textSize="50dp"
+                android:fontFamily="sans-serif-light" />
+
+            <ToggleButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:text=" "
+                android:id="@+id/Filtirz"
+                android:background="@color/colorAccentA100"
+                android:checked="false"
+                android:enabled="true"
+                android:textOff="@string/filters"
+                android:textOn="@string/filters"
+                android:textColor="@color/colorAccentA400"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/TextToolz"/>
+
+        </RelativeLayout>
+    </HorizontalScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:id="@+id/saveViewGroup">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/Imagge">
+
+            <ImageView
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                android:id="@+id/theImage"
+                android:cropToPadding="false"
+                android:focusable="false"
+                android:src="@drawable/ic_image_white_48dp"
+                android:scaleType="centerCrop"
+                android:clickable="true"
+                android:longClickable="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:onClick="longlick" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/example"
+            android:id="@+id/TextVieww"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textSize="30dp"
+            android:textColor="#010101" />
+    </RelativeLayout>
+
+    <HorizontalScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:id="@+id/TextTooolz"
+        android:layout_above="@+id/horizontalScrollView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="5dp"
+        android:background="@color/colorAccentA200" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+
+                android:imeActionId="42"
+                android:id="@+id/inputText"
+                android:inputType="textNoSuggestions"
+                android:lines="1"
+                android:maxLines="1"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/colorAccentA100"
+                android:fontFamily="sans-serif-light"
+                android:singleLine="true"
+                android:hint="@string/writehr"
+                android:textColor="@color/colorAccentA400"
+                android:textColorHint="@color/colorAccentA400"
+                android:textSize="25dp" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:id="@+id/spinner"
+                android:layout_toRightOf="@+id/inputText"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/colorAccentA100"
+                android:spinnerMode="dropdown" />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/button2"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toRightOf="@+id/spinner"
+                android:background="@drawable/ic_palette_white_36dp"
+                android:onClick="colorPicker" />
+
+        </RelativeLayout>
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:id="@+id/filters"
+        android:layout_above="@+id/horizontalScrollView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="5dp"
+        android:background="@color/colorAccentA200" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ToggleButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/button3"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/ic_blur_off_white_36dp"
+                android:textOff=" "
+                android:textOn=" " />
+        </RelativeLayout>
+    </HorizontalScrollView>
+
+</RelativeLayout>
